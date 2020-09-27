@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServer";
+
+service GetData{
+	rpc GetDataInfo (ReceiveData) returns (SendData);
+	rpc SendDataInfo (ReceiveData1) returns (SendData1);
+}
+
+message ReceiveData{
+	string topic = 1;
+	string message = 2;
+}
+
+message SendData{
+	string topic = 1;
+	string message = 2;
+}
+
+message ReceiveData1{
+	string topic1 = 1;
+}
+
+message SendData1{
+	string message1 = 1;
+}
